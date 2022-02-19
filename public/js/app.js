@@ -23167,7 +23167,8 @@ __webpack_require__.r(__webpack_exports__);
             console.log(response.data);
 
             if (response.data.success) {
-              _this.$router.go('/dashboard');
+              //this.$router.go('/dashboard')
+              location.href = "/dashboard";
             } else {
               _this.error = response.data.message;
             }
@@ -24288,7 +24289,9 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   name: 'home',
   path: '/',
-  component: _pages_Home__WEBPACK_IMPORTED_MODULE_0__["default"]
+  component: function component() {
+    return Promise.resolve(/*! import() */).then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Home.vue */ "./resources/js/pages/Home.vue"));
+  }
 }, {
   name: 'register',
   path: '/register',

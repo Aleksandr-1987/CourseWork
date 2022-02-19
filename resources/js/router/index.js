@@ -15,7 +15,8 @@ export const routes = [
     {
         name: 'home',
         path: '/',
-        component: Home
+        component: () =>import(/* webpackChunkName: "group-user" */ '../pages/Home.vue')
+
     },
     {
         name: 'register',
