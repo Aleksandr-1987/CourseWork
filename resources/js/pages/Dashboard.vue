@@ -29,6 +29,7 @@ export default {
     },
     beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
+            console.log("doshly");
             window.location.href = "/";
         }
         next();
