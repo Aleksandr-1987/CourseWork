@@ -23093,8 +23093,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
     if (!window.Laravel.isLoggedin) {
-      console.log("doshly");
-      window.location.href = "/";
+      console.log("doshly"); //window.location.href = "/";
     }
 
     next();
