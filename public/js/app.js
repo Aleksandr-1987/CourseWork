@@ -23168,7 +23168,7 @@ __webpack_require__.r(__webpack_exports__);
 
             if (response.data.success) {
               //this.$router.go('/dashboard')
-              location.href = "/dashboard";
+              window.location.href = "/dashboard";
             } else {
               _this.error = response.data.message;
             }
@@ -24239,7 +24239,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content'); //window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; //window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

@@ -58,13 +58,13 @@ export default {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.post('api/login', {
                         email: this.email,
-                        password: this.password
+                        password: this.password,
                     })
                         .then(response => {
                             console.log(response.data)
                             if (response.data.success) {
                                 //this.$router.go('/dashboard')
-                                location.href="/dashboard";
+                                window.location.href="/dashboard";
                             } else {
                                 this.error = response.data.message
                             }
