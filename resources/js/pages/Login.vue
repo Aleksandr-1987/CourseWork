@@ -11,7 +11,6 @@
                     <div class="card-header">Авторизация</div>
                     <div class="card-body">
                         <form @submit.prevent="handleSubmit">
-                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">Укажите Ваш email</label>
                                 <div class="col-md-6">
@@ -58,7 +57,6 @@ export default {
             if (this.password.length > 0) {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.post('api/login', {
-                        "_token:": "{{ csrf_token() }}",
                         email: this.email,
                         password: this.password,
                     })
@@ -66,7 +64,6 @@ export default {
                             console.log(response.data)
                             if (response.data.success) {
                                 //this.$router.go('/dashboard')
-                                window.Laravel.isLoggedin = true;
                                 window.location.href="/dashboard";
                             } else {
                                 this.error = response.data.message

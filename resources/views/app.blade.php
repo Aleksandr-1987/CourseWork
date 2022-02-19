@@ -18,12 +18,11 @@
         @else
             @php
             $user_auth_data = [
-                //'isLoggedin' => false
-                'isLoggedin' => true,
-                'user' =>  Auth::user()
+                'isLoggedin' => false
             ];
             @endphp
         @endif
+
         <script>
             window.Laravel = JSON.parse(atob('{{ base64_encode(json_encode($user_auth_data)) }}'));
         </script>
