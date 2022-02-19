@@ -66,8 +66,6 @@ export default {
                         .then(response => {
                             console.log(response.data)
                             if (response.data.success) {
-                                //this.$router.go('/dashboard')
-                                console.log("my tut");
                                 window.location.href="/dashboard";
                             } else {
                                 this.error = response.data.message

@@ -53,7 +53,6 @@ class UserController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            Auth::check();
             $success = true;
             $message = 'User login successfully';
         } else {

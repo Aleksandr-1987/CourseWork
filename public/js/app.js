@@ -23093,7 +23093,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeRouteEnter: function beforeRouteEnter(to, from, next) {
     if (!window.Laravel.isLoggedin) {
-      console.log("doshly");
       window.location.href = "/";
     }
 
@@ -23170,8 +23169,6 @@ __webpack_require__.r(__webpack_exports__);
             console.log(response.data);
 
             if (response.data.success) {
-              //this.$router.go('/dashboard')
-              console.log("my tut");
               window.location.href = "/dashboard";
             } else {
               _this.error = response.data.message;
