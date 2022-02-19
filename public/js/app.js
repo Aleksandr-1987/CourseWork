@@ -23161,6 +23161,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.password.length > 0) {
         this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
           _this.$axios.post('api/login', {
+            "_token:": "{{ csrf_token() }}",
             email: _this.email,
             password: _this.password
           }).then(function (response) {
