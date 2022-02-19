@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="px-4 py-3 text-center">
-            <h1 class="display-5 fw-bold">Веб-планировщик задач</h1>
+            <h1 class="display-5 fw-bold">Веб-планировщик задач 2</h1>
             <div class="col-lg-6 mx-auto"> </div>
             <p class="lead mb-4">Если бы Юлий Цезарь жил в наше время, он вряд ли бы делал три дела одновременно: «долой work in progress», знаете ли. И он уж точно бы не хранил весь свой ворох задач на стикерах и бумажках, а пользовался бы онлайн-планировщиком. Осталось только выяснить, каким именно.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> </div>
