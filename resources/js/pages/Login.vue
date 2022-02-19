@@ -11,6 +11,7 @@
                     <div class="card-header">Авторизация</div>
                     <div class="card-body">
                         <form @submit.prevent="handleSubmit">
+                            <meta name="csrf-token" content="{{ csrf_token() }}">
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">Укажите Ваш email</label>
                                 <div class="col-md-6">
@@ -48,15 +49,17 @@ export default {
         return {
             email: "",
             password: "",
-            error: null
+            error: null,
         }
     },
     methods: {
         handleSubmit(e) {
+            window.csrfToken = document.querySelector('meta[name="csrf-token"]').content;
             e.preventDefault()
             if (this.password.length > 0) {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.post('api/login', {
+                        _token: csrfToken,
                         email: this.email,
                         password: this.password,
                     })
