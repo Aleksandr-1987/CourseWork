@@ -19,6 +19,8 @@
             @php
             $user_auth_data = [
                 //'isLoggedin' => false
+                'isLoggedin' => true,
+                'user' =>  Auth::user()
             ];
             @endphp
         @endif
