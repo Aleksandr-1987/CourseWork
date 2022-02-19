@@ -66,6 +66,7 @@ export default {
                             console.log(response.data)
                             if (response.data.success) {
                                 //this.$router.go('/dashboard')
+                                window.Laravel.isLoggedin = true;
                                 window.location.href="/dashboard";
                             } else {
                                 this.error = response.data.message

@@ -23169,6 +23169,7 @@ __webpack_require__.r(__webpack_exports__);
 
             if (response.data.success) {
               //this.$router.go('/dashboard')
+              window.Laravel.isLoggedin = true;
               window.location.href = "/dashboard";
             } else {
               _this.error = response.data.message;
